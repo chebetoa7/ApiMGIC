@@ -15,8 +15,7 @@ namespace ApiMGIC.Model.CEDIS
         {
             Save(new cedis
             {
-                id = 1,
-                idBD = 1001,
+                idS = "101010",
                 nombre = "CDISMONETERREY",
                 estado = "Nuevo Leon",
                 latitud = "25.752433",
@@ -24,8 +23,7 @@ namespace ApiMGIC.Model.CEDIS
             });
             Save(new cedis
             {
-                id = 2,
-                idBD = 1002,
+                idS = "101011",
                 nombre = "CDISSALTILLO",
                 estado = "Cuahuila",
                 latitud = "25.752433",
@@ -48,13 +46,13 @@ namespace ApiMGIC.Model.CEDIS
 
         public void Save(cedis cdi)
         {
-            cedis_[cdi.id.ToString()] = cdi;
+            cedis_[cdi.idS.ToString()] = cdi;
             //throw new NotImplementedException();
         }
 
         public void Update(cedis cdi)
         {
-            cedis_[cdi.id.ToString()] = cdi;
+            cedis_[cdi.idS.ToString()] = cdi;
             //throw new NotImplementedException();
         }
     }

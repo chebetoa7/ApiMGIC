@@ -2,43 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ApiMGIC.Model.UserFV;
+using ApiMGIC.Model.Days;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiMGIC.Controllers
-{
-    /*[Route("api/[controller]")]
+{/*[Route("api/[controller]")]
     [ApiController]*/
-    public class UserFVController : ControllerBase
+    public class DaysController : ControllerBase
     {
-        userfvRepository userfvRepository = new userfvRepository();
-        // GET: api/UserFV
+        Model.Days.DaysRepository daysRepo = new
+            Model.Days.DaysRepository();
+        // GET: api/Days
         [HttpGet]
-        [Route("userfv")]
-        public IEnumerable<userFV> Get()
+        [Route("Days")]
+        public IEnumerable<Days> GetDays()
         {
-            var userFVAll = userfvRepository.GetUserFV();
-
-            return userFVAll;
+            var days_ = daysRepo.GetDays();
+            return days_;
             //return new string[] { "value1", "value2" };
         }
 
         /*
-        // GET: api/UserFV/5
+        // GET: api/Days/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/UserFV
+        // POST: api/Days
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/UserFV/5
+        // PUT: api/Days/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

@@ -10,6 +10,7 @@
     <Folder Include="Model\Location\" />
     <Folder Include="Model\cumstomerVisited\" />
     <Folder Include="Model\KPIUser\" />
+    <Folder Include="Pages\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

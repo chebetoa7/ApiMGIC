@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ApiMGIC.Model.UserMM;
+using ApiMGIC.Model.TaskTemplate;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,46 +10,35 @@ namespace ApiMGIC.Controllers
 {
     /*[Route("api/[controller]")]
     [ApiController]*/
-    public class usuarioController : ControllerBase
+    public class TaskTemplateController : ControllerBase
     {
-
-        usuarioRepository usuarioRepository = new usuarioRepository();
-        // GET: api/usuarioMM
-       /* [HttpGet]
-        [Route("api/usuarioMM/GetUsuario")]
-        public IEnumerable<usuariomm> Get()
-        {
-
-            var usuAll = usuarioRepository.GetUsuario();
-
-            return usuAll;
-        }*/
-        
-        // GET: api/usuariomm
+        Model.TaskTemplate.TaskTemplateRepository taskTRepo =
+            new Model.TaskTemplate.TaskTemplateRepository();
+        // GET: api/TaskTemplate
         [HttpGet]
-        [Route("user")]
-        public IEnumerable<usuariomm> Get()
+        [Route("taskTemplate")]
+        public IEnumerable<TaskTemplate> GetTaskTemplate()
         {
+            var TakstAll = taskTRepo.GetTaskTemplate();
+            return TakstAll;
             //return new string[] { "value1", "value2" };
-            var usuAll = usuarioRepository.GetUsuario();
-
-            return usuAll;
         }
+
         /*
-        // GET: api/usuario/5
+        // GET: api/TaskTemplate/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/usuario
+        // POST: api/TaskTemplate
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/usuario/5
+        // PUT: api/TaskTemplate/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

@@ -9,13 +9,53 @@ namespace ApiMGIC.Model.Store
     public class store
     {
         [Key, Required]
-        public int id { get; set; }
+        public string idS { get; set; }
 
         [Required]
-        public int idBD { get; set; }
+        public string customernumber { get; set; }
 
         [Required]
-        public string nombreCliente { get; set; }
+        public string RutaSOL { get; set; }
+
+        [Required]
+        public string OficinadeVentas { get; set; }
+
+        [Required]
+        public string name1 { get; set; }
+
+        [Required]
+        public string name2 { get; set; }
+
+        [Required]
+        public string Poblacion { get; set; }
+
+        [Required]
+        public string zipcode { get; set; }
+
+        [Required]
+        public string streetandnumber { get; set; }
+
+        [Required]
+        public string Dirección { get; set; }
+
+        [Required]
+        public string salesorganization { get; set; }
+
+        [Required]
+        public string distributionchannel { get; set; }
+
+        [Required]
+        public string Sector { get; set; }
+
+        [Required]
+        public string Gpoclientes { get; set; }
+
+        [Required]
+        public string Zonadeventas { get; set; }
+
+
+        [Required]
+        public string region { get; set; }
 
         [Required]
         public string latitud { get; set; }
@@ -24,25 +64,10 @@ namespace ApiMGIC.Model.Store
         public string longitud { get; set; }
 
         [Required]
-        public string direccion { get; set; }
+        public string Interlocutor { get; set; }
 
         [Required]
-        public string canalDistribucion { get; set; }
-
-        [Required]
-        public string zonaVenta { get; set; }
-
-        [Required]
-        public string region { get; set; }
-
-        [Required]
-        public string segmento { get; set; }
-
-        [Required]
-        public string codigoPostal { get; set; }
-
-        [Required]
-        public string poblacion { get; set; }
+        public string Segment { get; set; }
 
 
     }

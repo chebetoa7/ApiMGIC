@@ -15,12 +15,49 @@ namespace ApiMGIC.Controllers
         Model.scheduleDay.ScheduleRepository schedulerepo =
             new Model.scheduleDay.ScheduleRepository();
         // GET: api/Schedule
+
         [HttpGet]
         [Route("schedule")]
-        public IEnumerable<Schedule> GetSchedule()
+        public IEnumerable<Schedule> GetScheduleAll()
         {
-            var scheduleAll = schedulerepo.GetSchedule();
-            return scheduleAll;
+            var scheduleidAssigne =
+                schedulerepo.GetSchedule();
+            return scheduleidAssigne;
+            //return new string[] { "value1", "value2" };
+        }
+        [HttpGet]
+        [Route("schedule_Id")]
+        public IEnumerable<Schedule> GetSchedule(string assigneid_)
+        {
+            var scheduleidAssigne = 
+                schedulerepo.GetSchedule().Where(m => m.Assignedid == assigneid_);
+            return scheduleidAssigne;
+            //return new string[] { "value1", "value2" };
+        }
+
+        [HttpPost]
+        [Route("schedule_post")]
+        public IActionResult PostSchedule([FromBody]Schedule scheduleitem)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                try
+                {
+                    schedulerepo.Save(scheduleitem);
+                    return Ok(scheduleitem);
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+            //var scheduleidAssigne =
+            //    schedulerepo.GetSchedule().Where(m => m.Assignedid == assigneid_);
+            //return scheduleidAssigne;
             //return new string[] { "value1", "value2" };
         }
 

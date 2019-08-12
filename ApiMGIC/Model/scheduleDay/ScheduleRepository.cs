@@ -12,33 +12,16 @@ namespace ApiMGIC.Model.scheduleDay
       new ConcurrentDictionary<string, Schedule>();
         public ScheduleRepository()
         {
-            Save(new Schedule
+            /*Save(new Schedule
             {
-                id = 1,
-                idUsuarioFV = 1,
-                idUsuarioMM = 1,
+                idS = Guid.NewGuid().ToString("D"),
+                Storeid = "10001",
+                Assignedid = 1,
                 fecha = "2019-08-9",
                 tipoAgenda = "AB",
                 estatus = "Nueva"
-            });
-            Save(new Schedule
-            {
-                id = 2,
-                idUsuarioFV = 2,
-                idUsuarioMM = 1,
-                fecha = "2019-08-10",
-                tipoAgenda = "AB",
-                estatus = "Nueva"
-            });
-            Save(new Schedule
-            {
-                id = 3,
-                idUsuarioFV = 1,
-                idUsuarioMM = 1,
-                fecha = "2019-08-23",
-                tipoAgenda = "AB",
-                estatus = "Nueva"
-            });
+            });*/
+            
         }
         public IEnumerable<Schedule> GetSchedule()
         {
@@ -56,13 +39,13 @@ namespace ApiMGIC.Model.scheduleDay
 
         public void Save(Schedule sct)
         {
-            schedule[sct.id.ToString()] = sct;
+            schedule[sct.idS.ToString()] = sct;
             //throw new NotImplementedException();
         }
 
         public void Update(Schedule sct)
         {
-            schedule[sct.id.ToString()] = sct;
+            schedule[sct.idS.ToString()] = sct;
             //throw new NotImplementedException();
         }
     }

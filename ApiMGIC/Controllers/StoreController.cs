@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApiMGIC.Model.Store;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ApiMGIC.Data.Entities;
 
 namespace ApiMGIC.Controllers
 {
@@ -12,15 +13,53 @@ namespace ApiMGIC.Controllers
     [ApiController]*/
     public class StoreController : ControllerBase
     {
-        storeRepository storeRepository = new storeRepository();
+
+        Model.Store.storeRepository storeRepository = new
+            Model.Store.storeRepository();
+
+        //private readonly DataContext dg;//= new Data.Entities.DataContext();
+
+
+        /*public StoreController(storeRepository context)
+        {
+            storeRepository = context;
+        }*/
         // GET: api/Schedule
         [HttpGet]
         [Route("store")]
         public IEnumerable<store> Get()
         {
+            
             var storeAll = storeRepository.GetStore();// = new scheduleRepository();
             return storeAll;
            // return new string[] { "value1", "value2" };
+        }
+
+
+        [HttpPost]
+        [Route("store_post")]
+        public IActionResult PostStore([FromBody] store store_)
+        {
+
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+
+            }
+            else
+            {
+                try
+                {
+                    storeRepository.Save(store_);
+                    //dg.SaveChanges();
+                    return Ok(store_);
+                } catch (Exception exM)
+                {
+                    Console.WriteLine(exM.Message);
+                    throw;
+                }
+            }
         }
 
         /*

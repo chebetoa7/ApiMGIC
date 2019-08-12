@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ApiMGIC",
+    "\\ApiMGIC\\Controllers",
+    "\\ApiMGIC\\Migrations",
+    "\\ApiMGIC\\Model",
+    "\\ApiMGIC\\Model\\Store"
+  ],
+  "SelectedNode": "\\ApiMGIC\\Migrations\\20190812042707_Initial.cs",
+  "PreviewInSolutionExplorer": false
+}

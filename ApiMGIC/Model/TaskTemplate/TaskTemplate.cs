@@ -4,26 +4,27 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApiMGIC.Model.CEDIS
+namespace ApiMGIC.Model.TaskTemplate
 {
-    public class cedis
+    public class TaskTemplate
     {
         [Key, Required]
         public string idS { get; set; }
 
         [Required]
-        public string nombre { get; set; }
+        public string key { get; set; }
 
         [Required]
-        public string estado { get; set; }
+        public string description { get; set; }
 
         [Required]
-        public string ciudad { get; set; }
+        public string type { get; set; }
 
         [Required]
-        public string latitud { get; set; }
+        public string enable { get; set; }
 
         [Required]
-        public string longitud { get; set; }
+        public string nomenclature { get; set; }
+
     }
 }
