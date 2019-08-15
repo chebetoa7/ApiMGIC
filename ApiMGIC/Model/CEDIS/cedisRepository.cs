@@ -29,6 +29,22 @@ namespace ApiMGIC.Model.CEDIS
                 latitud = "25.752433",
                 longitud = "-100.393991"
             });
+            Save(new cedis
+            {
+                idS = "101011",
+                nombre = "CDISPUEBLA",
+                estado = "Puebla",
+                latitud = "25.752433",
+                longitud = "-100.393991"
+            });
+            Save(new cedis
+            {
+                idS = "101011",
+                nombre = "CDISOAXACA",
+                estado = "Oaxaca",
+                latitud = "25.752433",
+                longitud = "-100.393991"
+            });
         }
         public IEnumerable<cedis> GetCedi()
         {
@@ -39,7 +55,7 @@ namespace ApiMGIC.Model.CEDIS
         public cedis Remove(string key)
         {
             cedis cdi;
-            cedis_.TryGetValue(key, out cdi);
+            cedis_.TryRemove(key, out cdi);
             return cdi;
             //throw new NotImplementedException();
         }

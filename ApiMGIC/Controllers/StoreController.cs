@@ -84,10 +84,17 @@ namespace ApiMGIC.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
         */
+        [HttpDelete]
+        [Route("store_delete")]
+        public void Delete(string id)
+        {
+            try
+            {
+                storeRepository.Remove(id);
+                
+            } catch { throw; }
+        }
+        
     }
 }

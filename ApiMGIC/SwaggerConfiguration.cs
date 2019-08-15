@@ -43,5 +43,7 @@ namespace ApiMGIC
         /// <para>Foo Api - Sample Web API in ASP.NET Core 2</para>
         /// </summary>
         public const string DocInfoDescription = "Modelo de Gestión Implacable Services Api - in ASP.NET Core 2";
+
+
     }
 }

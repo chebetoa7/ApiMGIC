@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiMGIC.Model.Assigne;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace ApiMGIC.Controllers
         Model.Assigne.assigneRepository assigneRepo = new 
             Model.Assigne.assigneRepository();
 
+        [EnableCors("MyPolicy")]
         [HttpGet]
         [Route("assigne")]
         public IEnumerable<assigne> GetAssine()
@@ -70,7 +72,10 @@ namespace ApiMGIC.Controllers
             try
             {
                 assigneRepo.Remove(id);
-            } catch { throw; }
+            } catch
+            {
+                throw;
+            }
         }
 
         /*

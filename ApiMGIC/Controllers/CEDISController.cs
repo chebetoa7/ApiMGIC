@@ -31,12 +31,44 @@ namespace ApiMGIC.Controllers
             return "value";
         }
 
-        // POST: api/CEDIS
+        *///
+        //POST: api/CEDIS
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("cdis_post")]
+        public IActionResult Post([FromBody] cedis cdi_)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                try
+                {
+                    cdiRepository.Save(cdi_);
+                    return Ok(cdi_);
+                }
+                catch
+                {
+                    throw;
+                }
+            }
         }
 
+        [HttpDelete]
+        [Route("cedis_delete")]
+        public void cdisDelete(string id)
+        {
+            try
+            {
+                cdiRepository.Remove(id);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        /*
         // PUT: api/CEDIS/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)

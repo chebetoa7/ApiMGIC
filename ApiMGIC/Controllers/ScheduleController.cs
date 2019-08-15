@@ -61,6 +61,20 @@ namespace ApiMGIC.Controllers
             //return new string[] { "value1", "value2" };
         }
 
+        [HttpDelete]
+        [Route("schedule_delete")]
+        public void scheduleDelete(string id)
+        {
+            try
+            {
+                schedulerepo.Remove(id);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         //// GET: api/Schedule/5
         //[HttpGet("{id}", Name = "Get")]
         //public string Get(int id)

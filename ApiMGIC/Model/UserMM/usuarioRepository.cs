@@ -58,7 +58,7 @@ namespace ApiMGIC.Model.UserMM
         public usuariomm Remove(string id)
         {
             usuariomm umi;
-            usuario.TryGetValue(id, out umi);
+            usuario.TryRemove(id, out umi);
             return umi;
         }
 
