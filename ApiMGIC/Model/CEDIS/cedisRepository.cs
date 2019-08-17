@@ -31,7 +31,7 @@ namespace ApiMGIC.Model.CEDIS
             });
             Save(new cedis
             {
-                idS = "101011",
+                idS = "101012",
                 nombre = "CDISPUEBLA",
                 estado = "Puebla",
                 latitud = "25.752433",
@@ -39,7 +39,7 @@ namespace ApiMGIC.Model.CEDIS
             });
             Save(new cedis
             {
-                idS = "101011",
+                idS = "101013",
                 nombre = "CDISOAXACA",
                 estado = "Oaxaca",
                 latitud = "25.752433",
