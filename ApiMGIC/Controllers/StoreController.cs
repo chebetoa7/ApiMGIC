@@ -36,6 +36,18 @@ namespace ApiMGIC.Controllers
         }
 
 
+        [HttpGet]
+        [Route("store_celulas")]
+        public IEnumerable<store> GetStoreCelulas(string celula_)
+        {
+            var assigneName = storeRepository.GetStore().Where(m => m.Segment == celula_);
+            return assigneName;
+            //return new string[] { "value1", "value2" };
+        }
+
+
+
+
         [HttpPost]
         [Route("store_post")]
         public IActionResult PostStore([FromBody] store store_)

@@ -8,10 +8,10 @@ namespace ApiMGIC.Model.Task
 {
     public class Task
     {
-        [Key, Required]
-        public string taskId { get; set; }
-
         [Required]
+        public string TaskId { get; set; }
+
+        [Key,Required]
         public string idS { get; set; }
 
         [Required]
@@ -29,32 +29,44 @@ namespace ApiMGIC.Model.Task
         [Required]
         public string StoreId { get; set; }
 
-        [Required]
+       
         public string HomeworkDescription { get; set; }
 
-        [Required]
+      
         public string DescripcionCoordinator { get; set; }
 
-        [Required]
+     
+        public string DescriptionSeller { get; set; }
+
+
         public string Status { get; set; }
 
-        [Required]
+   
         public string Colour { get; set; }
 
-        [Required]
+   
         public string DayHome { get; set; }
 
-        [Required]
+
         public string DayStart { get; set; }
 
-        [Required]
+
         public string DayEnd { get; set; }
 
-        [Required]
+
+        public string Description { get; set; }
+
+
         public string Created_Date { get; set; }
 
-        [Required]
+    
         public string Updated_Date { get; set; }
+
+
+        public string Enabled { get; set; }
+
+ 
+        public string Celula { get; set; }
 
     }
 }

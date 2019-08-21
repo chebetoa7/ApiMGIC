@@ -45,6 +45,24 @@ namespace ApiMGIC.Controllers
             //return new string[] { "value1", "value2" };
         }
 
+        [HttpGet]
+        [Route("assigne_numero")]
+        public IEnumerable<assigne> GetAssineNumero(string numero_)
+        {
+            var assigneName = assigneRepo.GetAssigne().Where(m => m.numero == numero_);
+            return assigneName;
+            //return new string[] { "value1", "value2" };
+        }
+
+        [HttpGet]
+        [Route("assigne_celula")]
+        public IEnumerable<assigne> GetAssineCelula(string celula_)
+        {
+            var assigneName = assigneRepo.GetAssigne().Where(m => m.celula == celula_);
+            return assigneName;
+            //return new string[] { "value1", "value2" };
+        }
+
         [HttpPost]
         [Route("assigne_post")]
         public IActionResult assignePost([FromBody] assigne assigne_)

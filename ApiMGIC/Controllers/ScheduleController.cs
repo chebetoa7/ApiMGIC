@@ -35,10 +35,21 @@ namespace ApiMGIC.Controllers
             //return new string[] { "value1", "value2" };
         }
 
+
+        [HttpGet]
+        [Route("schedule_celula")]
+        public IEnumerable<Schedule> GetStoreCelula(string celula_)
+        {
+            var schedule = schedulerepo.GetSchedule().Where(m => m.Celula == celula_);
+            return schedule;
+            //return new string[] { "value1", "value2" };
+        }
+
         [HttpPost]
         [Route("schedule_post")]
         public IActionResult PostSchedule([FromBody]Schedule scheduleitem)
         {
+            scheduleitem.idS = Guid.NewGuid().ToString("D");
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -55,10 +66,30 @@ namespace ApiMGIC.Controllers
                     throw;
                 }
             }
-            //var scheduleidAssigne =
-            //    schedulerepo.GetSchedule().Where(m => m.Assignedid == assigneid_);
-            //return scheduleidAssigne;
-            //return new string[] { "value1", "value2" };
+        }
+
+        [HttpPut]
+        [Route("schedule_put")]
+        public IActionResult PutSchedule([FromBody]Schedule scheduleitem)
+        {
+            //scheduleitem.idS = Guid.NewGuid().ToString("D");
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                try
+                {
+                    //schedulerepo.Save(scheduleitem);
+                    schedulerepo.Update(scheduleitem);
+                    return Ok();
+                }
+                catch
+                {
+                    throw;
+                }
+            }
         }
 
         [HttpDelete]

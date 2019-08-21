@@ -12,32 +12,34 @@ namespace ApiMGIC.Model.scheduleDay
       new ConcurrentDictionary<string, Schedule>();
         public ScheduleRepository()
         {
-            Save(new Schedule
-            {
-                idS = "7238732783287238",
-                Storeid = "0000123456",
-                Assignedid = "00080334",
-                Status = "Activo",
-                Color = "Red",
-                Datevisit = DateTime.Now.ToString(),
-                Hoursstart = "09:00",
-                Hoursend = "11:00",
-                Enabled = "False",
-                LatitudeIn = "13.23232",
-                LongitudeIn = "-93.28374",
-                LatitudeEnd = "0",
-                LongituteEnd = "0",
-                DistanceStart = "100",
-                DistanceEnd = "100",
-                TypeofEntry = "False",
-                TypeHomeWorks = "Abordage",
-                CheckInOut = "True",
-                TypeProcess = "Nuevo",
-                Interlocutor = "DET",
-                Segment = "U012",
-                Creatorid = "0000123456",
-                Profile = "Supervisor MG"
-            });
+            //Save(new Schedule
+            //{
+            //    idS = "7238732783287238",
+            //    Scheduleid = "123122",
+            //    Storeid = "0000123456",
+            //    Assignedid = "00080334",
+            //    Status = "Activo",
+            //    Color = "Red",
+            //    Datevisit = DateTime.Now.ToString(),
+            //    Hoursstart = "09:00",
+            //    Hoursend = "11:00",
+            //    Enabled = "False",
+            //    LatitudeIn = "13.23232",
+            //    LongitudeIn = "-93.28374",
+            //    LatitudeEnd = "0",
+            //    LongituteEnd = "0",
+            //    DistanceStart = "100",
+            //    DistanceEnd = "100",
+            //    TypeofEntry = "False",
+            //    TypeHomeWorks = "Abordage",
+            //    CheckInOut = "True",
+            //    TypeProcess = "Nuevo",
+            //    Interlocutor = "DET",
+            //    Segment = "U011",
+            //    Creatorid = "0000123456",
+            //    Profile = "Supervisor MG",
+            //    Celula = "U011"
+            //});
             
         }
         public IEnumerable<Schedule> GetSchedule()

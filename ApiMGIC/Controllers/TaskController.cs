@@ -22,10 +22,20 @@ namespace ApiMGIC.Controllers
            // return new string[] { "value1", "value2" };
         }
 
+        [HttpGet]
+        [Route("task_celula")]
+        public IEnumerable<Model.Task.Task> GetStoreCelula(string celula_)
+        {
+            var taskR = taskRepository.GetTask().Where(m => m.Celula == celula_);
+            return taskR;
+            //return new string[] { "value1", "value2" };
+        }
+
         [HttpPost]
         [Route("Task_Post")]
         public IActionResult taskPost([FromBody]Task task_)
         {
+            task_.idS = Guid.NewGuid().ToString("D");
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -43,6 +53,31 @@ namespace ApiMGIC.Controllers
                 }
             }
 
+        }
+
+
+        [HttpPut]
+        [Route("Task_Put")]
+        public IActionResult PutTask([FromBody]Task task_)
+        {
+            //scheduleitem.idS = Guid.NewGuid().ToString("D");
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                try
+                {
+                    //schedulerepo.Save(scheduleitem);
+                    taskRepository.Update(task_);
+                    return Ok();
+                }
+                catch
+                {
+                    throw;
+                }
+            }
         }
 
         /*

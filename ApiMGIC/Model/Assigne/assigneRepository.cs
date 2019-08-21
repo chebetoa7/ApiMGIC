@@ -20,7 +20,7 @@ namespace ApiMGIC.Model.Assigne
                 nombre = "Chaidez Cepeda, Jorge",
                 idpuesto = "50190207",
                 cvepuesto = "13V548",
-                puesto = "VAMT",
+                puesto = "VAMS",
                 unidadorg = "50189917",
                 subdiv = "LOS MOCHIS",
                 nivel = "NIVEL_52",
@@ -71,7 +71,7 @@ namespace ApiMGIC.Model.Assigne
             {
                 idS = "dee9bc88-c481-4ce4-ba7a-7faea2w369231",
                 numero = "00080414",
-                nombre = "Perez Tecol, Aron",
+                nombre = "Perez Tecol, Aaron",
                 idpuesto = "5019009",
                 cvepuesto = "TPM3D",
                 puesto = "VAMT3",
